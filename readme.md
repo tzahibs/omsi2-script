@@ -19,7 +19,7 @@ This tool is a specialized **Python-GUI** application designed to automate the m
 
 1. **Install Python:** Ensure [Python 3.x](https://www.python.org/) is installed on your system.
 2. **Download:** Save the `omsi_fov_manager.py` script to your computer.
-3. **No Dependencies:** This script uses only standard libraries (`tkinter`, `os`, `shutil`). No extra installation is required.
+3. **Dependencies:** This script uses only standard libraries (`tkinter`, `os`, `shutil`) for running. No extra installation is required for running the script. For creating an executable, `pyinstaller` is required.
 
 ---
 
@@ -51,3 +51,26 @@ Vehicles/
     └── BK/
         ├── [Bus_Name].bus.bk     (Your original backup - PROTECTED)
         └── [Bus_Name].bus.backup (Legacy game backups moved here)
+```
+
+---
+
+## 📦 Creating an Executable
+
+To create a standalone executable (`.exe`) from the Python script, you can use `pyinstaller`.
+
+1. **Install Dependencies:**
+   Install `pyinstaller` by running the following command in your terminal:
+   ```shell
+   pip install -r requirements.txt
+   ```
+
+2. **Run PyInstaller:**
+   Navigate to the project directory in your terminal and run the following command:
+   ```shell
+   pyinstaller --onefile --windowed omsi_2_fov_updater.py
+   ```
+   - `--onefile`: Bundles everything into a single executable.
+   - `--windowed`: Prevents the command-line console from appearing when you run the application.
+
+   After the process is complete, you will find the executable file in the `dist` folder.
