@@ -17,9 +17,39 @@ This tool is a specialized **Python-GUI** application designed to automate the m
 
 ## 🚀 Installation
 
+### Simple Usage
+If you just want to run the script, you only need Python.
+
 1. **Install Python:** Ensure [Python 3.x](https://www.python.org/) is installed on your system.
-2. **Download:** Save the `omsi_fov_manager.py` script to your computer.
-3. **No Dependencies:** This script uses only standard libraries (`tkinter`, `os`, `shutil`). No extra installation is required.
+2. **Download:** Save the `omsi_2_fov_updater.py` script to your computer and run it.
+
+### Developer Setup (for building the executable)
+If you want to build the executable from the source code, it is recommended to use a virtual environment.
+
+1. **Install Python:** Ensure [Python 3.x](https://www.python.org/) is installed on your system.
+
+2. **Clone the repository:**
+   ```shell
+   git clone <repository-url>
+   cd omsi-bus-fov
+   ```
+
+3. **Create and activate a virtual environment:**
+   On Windows:
+   ```shell
+   python -m venv venv
+   .\venv\Scripts\activate
+   ```
+   On macOS/Linux:
+   ```shell
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+4. **Install dependencies:**
+   ```shell
+   pip install -r requirements.txt
+   ```
 
 ---
 
@@ -51,3 +81,26 @@ Vehicles/
     └── BK/
         ├── [Bus_Name].bus.bk     (Your original backup - PROTECTED)
         └── [Bus_Name].bus.backup (Legacy game backups moved here)
+```
+
+---
+
+## 📦 Creating an Executable
+
+To create a standalone executable (`.exe`) from the Python script, you can use `pyinstaller`.
+
+1. **Install Dependencies:**
+   Install `pyinstaller` by running the following command in your terminal:
+   ```shell
+   pip install -r requirements.txt
+   ```
+
+2. **Run PyInstaller:**
+   Navigate to the project directory in your terminal and run the following command:
+   ```shell
+   pyinstaller --onefile --windowed omsi_2_fov_updater.py
+   ```
+   - `--onefile`: Bundles everything into a single executable.
+   - `--windowed`: Prevents the command-line console from appearing when you run the application.
+
+   After the process is complete, you will find the executable file in the `dist` folder.
