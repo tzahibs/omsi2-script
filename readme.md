@@ -98,7 +98,7 @@ To create a standalone executable (`.exe`) from the Python script, you can use `
 2. **Run PyInstaller:**
    Navigate to the project directory in your terminal and run the following command:
    ```shell
-   pyinstaller --onefile --windowed omsi_2_fov_updater.py
+   python -m PyInstaller --onefile --noconsole .\omsi_2_fov_updater.py
    ```
    - `--onefile`: Bundles everything into a single executable.
    - `--windowed`: Prevents the command-line console from appearing when you run the application.
